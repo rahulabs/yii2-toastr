@@ -159,7 +159,7 @@ Acceptable parameters
 |-------------|-----------|-----------|-----------|
 |type|`info`|`info`, `error`, `success`, `warning`|Notification Type|
 |title|---|---|Notification Title|
-|message|`Simple javascript toast notifications`|---|Текст уведомления|
+|message|`Simple javascript toast notifications`|---|Notification text|
 |options|`[]`|[More details...](https://github.com/CodeSeven/toastr)|Additional options|
 
 **Allowed type constants:**
