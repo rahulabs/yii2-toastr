@@ -1,0 +1,42 @@
+{
+  "name": "rahulabs/yii2-toastr",
+  "description": "Simple javascript toast notifications",
+  "keywords": ["yii2", "extension", "jquery", "toastr", "notification"],
+  "type": "yii2-extension",
+  "license": "BSD-3-Clause",
+  "homepage": "https://github.com/rahulabs/yii2-toastr",
+  "support": {
+    "source": "https://github.com/rahulabs/yii2-toastr",
+    "issues": "https://github.com/rahulabs/yii2-toastr/issues"
+  },
+  "authors": [
+    {
+      "name": "Rahul Oberai",
+      "email": "roberoi.abstain@gmail.com",
+      "homepage": "https://github.com/rahulabs"
+    }
+  ],
+  "require": {
+	"php": ">=7.4",
+    "yiisoft/yii2": "~2.0.14",
+    "bower-asset/toastr": "^2.1"
+  },
+
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "rahulabs\\widgets\\toastr\\": "src"
+    }
+  },
+  "config": {
+		"optimize-autoloader": true,
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "dev",
+    "prefer-stable": true
+}
