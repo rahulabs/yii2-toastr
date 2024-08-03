@@ -3,35 +3,33 @@ Yii2 - Javascript Toast Notifications
 
 Simple javascript toast notifications - Javascript library for non-blocking notifications. jQuery is required. The goal is to create a simple core library that can be customized and extended.
 
-[![Latest Stable Version](https://poser.pugx.org/lavrentiev/yii2-toastr/v/stable)](https://packagist.org/packages/lavrentiev/yii2-toastr) [![Total Downloads](https://poser.pugx.org/lavrentiev/yii2-toastr/downloads)](https://packagist.org/packages/lavrentiev/yii2-toastr) [![Latest Unstable Version](https://poser.pugx.org/lavrentiev/yii2-toastr/v/unstable)](https://packagist.org/packages/lavrentiev/yii2-toastr) [![License](https://poser.pugx.org/lavrentiev/yii2-toastr/license)](https://packagist.org/packages/lavrentiev/yii2-toastr)
+[![Latest Stable Version](https://poser.pugx.org/rahulabs/yii2-toastr/v/stable)](https://packagist.org/packages/rahulabs/yii2-toastr) [![Total Downloads](https://poser.pugx.org/rahulabs/yii2-toastr/downloads)](https://packagist.org/packages/rahulabs/yii2-toastr) [![Latest Unstable Version](https://poser.pugx.org/rahulabs/yii2-toastr/v/unstable)](https://packagist.org/packages/rahulabs/yii2-toastr) [![License](https://poser.pugx.org/rahulabs/yii2-toastr/license)](https://packagist.org/packages/rahulabs/yii2-toastr)
 
-Установка
+Installation
 ---------
-Расширение устанавливается с помощью Composer интсрукция по установке [Composer](http://getcomposer.org/doc/00-intro.md#installation-nix)
+The extension is installed using Composer installation instructions [Composer](http://getcomposer.org/doc/00-intro.md#installation-nix)
 
-Установка расширения через Composer, выполнить следующую команду:
+The extension is installed using Composer installation instructions
 ```
 composer require --prefer-dist rahulabs/yii2-toastr
 ```
-или (master)
+or (master)
 ```
 composer require --prefer-dist rahulabs/yii2-toastr "dev-master"
 ```
-или внести изменения в секцию `require` в `composer.json` и выполнить `composer update`
+or make changes to the section `require` в `composer.json` and execute `composer update`
 ```
 "rahulabs/yii2-toastr": "^2.0"
 ```
-или (master)
+or (master)
+
 ```
 "rahulabs/yii2-toastr": "dev-master"
 ```
 
-### Уведомления Notification::widget()
-
-![alt text](https://raw.githubusercontent.com/lavrentiev/yii2-toastr/master/screenshot/screenshot-1-2.png "Уведомления Notification::widget()")
 
 ```php
-use lavrentiev\widgets\toastr\Notification;
+use rahulabs\widgets\toastr\Notification;
 
 Notification::widget([
     'type' => 'info',
@@ -77,9 +75,10 @@ Notification::widget([
     'message' => 'Simple javascript toast notifications'
 ]);
 ```
-Также присутствует возможность настройки произвольного уведомления, по параметрам предусмотренным разработчиками [Toastr by CodeSeven](https://github.com/CodeSeven/toastr)
+There is also the possibility of setting up a custom notification, according to the parameters provided by the developers.
+ [Toastr by CodeSeven](https://github.com/CodeSeven/toastr)
 
-![alt text](https://raw.githubusercontent.com/lavrentiev/yii2-toastr/master/screenshot/screenshot-3.png "Уведомления Notification::widget()")
+![alt text](https://raw.githubusercontent.com/rahulabs/yii2-toastr/master/screenshot/screenshot-3.png "Notifications Notification::widget()")
 ```php
 Notification::widget([
     'type' => Notification::TYPE_ERROR,
@@ -105,24 +104,25 @@ Notification::widget([
 ]);
 ```
 
-### Уведомления NotificationFlash::widget()
+### Notifications NotificationFlash::widget()
 
-Подключение осуществляеться глобально допустим в layouts проекта.
+
+The connection is made globally, for example in the project layouts.
 
 ```php
-<?= \lavrentiev\widgets\toastr\NotificationFlash::widget() ?>
+<?= \rahulabs\widgets\toastr\NotificationFlash::widget() ?>
 ```
 
-Также присутствует возможность настройки уведомлений, по параметрам предусмотренным разработчиками [Toastr by CodeSeven](https://github.com/CodeSeven/toastr)
+There is also the possibility of setting up notifications according to the parameters provided by the developers. [Toastr by CodeSeven](https://github.com/CodeSeven/toastr)
 
 ```php
-<?= \lavrentiev\widgets\toastr\NotificationFlash::widget([
+<?= \rahulabs\widgets\toastr\NotificationFlash::widget([
     'options' => [
         "closeButton" => true,
         "debug" => false,
         "newestOnTop" => false,
         "progressBar" => false,
-        "positionClass" => \lavrentiev\widgets\toastr\NotificationFlash::POSITION_TOP_RIGHT,
+        "positionClass" => \rahulabs\widgets\toastr\NotificationFlash::POSITION_TOP_RIGHT,
         "preventDuplicates" => false,
         "onclick" => null,
         "showDuration" => "300",
@@ -137,7 +137,7 @@ Notification::widget([
 ]) ?>
 ```
 
-![alt text](https://raw.githubusercontent.com/lavrentiev/yii2-toastr/master/screenshot/screenshot-4.png "Уведомления NotificationFlash::widget()")
+![alt text](https://raw.githubusercontent.com/rahulabs/yii2-toastr/master/screenshot/screenshot-4.png "Notifications NotificationFlash::widget()")
 
 ```php
 \Yii::$app->session->setFlash('error', 'This is the message');
@@ -146,31 +146,30 @@ Notification::widget([
 \Yii::$app->session->setFlash('warning', 'This is the message');
 ```
 
-![alt text](https://raw.githubusercontent.com/lavrentiev/yii2-toastr/master/screenshot/screenshot-5.png "Уведомления NotificationFlash::widget()")
+![alt text](https://raw.githubusercontent.com/rahulabs/yii2-toastr/master/screenshot/screenshot-5.png "Notifications NotificationFlash::widget()")
 
 ```php
 \Yii::$app->session->setFlash('warning', ['Error 1', 'Error 2', 'Error 3']);
 \Yii::$app->session->setFlash('success', ['Error 1', 'Error 2', 'Error 3']);
 ```
 
-Допустимые параметры
+Acceptable parameters
 ---------------------
-|Параметр|Значение по умолчанию|Допустимые значения|Описание
+|Parameter|Default value|Available values|Description
 |-------------|-----------|-----------|-----------|
-|type|`info`|`info`, `error`, `success`, `warning`|Тип уведомления|
-|title|---|---|Заголовок уведомления|
+|type|`info`|`info`, `error`, `success`, `warning`|Notification Type|
+|title|---|---|Notification Title|
 |message|`Simple javascript toast notifications`|---|Текст уведомления|
-|options|`[]`|[Подробней...](https://github.com/CodeSeven/toastr)|Дополнительные опции|
+|options|`[]`|[More details...](https://github.com/CodeSeven/toastr)|Additional options|
 
-**Допустимые константы типов:**
+**Allowed type constants:**
 ```
 TYPE_INFO = 'info'
 TYPE_ERROR = 'error'
 TYPE_SUCCESS = 'success'
 TYPE_WARNING = 'warning'
 ```
-
-**Допустимые константы положения:**
+**Available position constants:**
 ```
 POSITION_TOP_RIGHT = 'toast-top-right';
 POSITION_TOP_LEFT = 'toast-top-left';
@@ -184,11 +183,11 @@ POSITION_BOTTOM_FULL_WIDTH = 'toast-bottom-full-width';
 ```
 
 
-Демонстрация
+Demonstration
 -------------
 * Demo can be found at http://codeseven.github.io/toastr/demo.html
 
-Дополнительно
+Additionally
 -------------
 * [Toastr by CodeSeven](https://github.com/CodeSeven/toastr)
 * [Yii PHP Framework Version 2](https://github.com/yiisoft/yii2)
