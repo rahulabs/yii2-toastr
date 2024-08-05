@@ -1,6 +1,6 @@
 <?php
 
-namespace lavrentiev\widgets\toastr;
+namespace rahulabs\widgets\toastr;
 
 use yii\base\Widget;
 use yii\helpers\Html;
